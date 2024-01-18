@@ -32,10 +32,11 @@ const HomePage = () => {
     getCars();
   }, [keyword]);
 
+  const user = JSON.parse(localStorage.getItem("user"))?.data
 
   return (
     <div className='container mx-auto'>
-      <NewCar />
+     {user && <NewCar />}
       <ShowCars data={data} loading={loading} />
     </div>
   )
